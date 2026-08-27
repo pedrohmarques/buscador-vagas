@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "@radix-ui/themes/styles.css";
+
+:root {
+  color-scheme: light;
+
+  --background: #f4f2ee;
+  --foreground: rgb(0 0 0 / 0.9);
+
+  --card: #ffffff;
+  --card-foreground: rgb(0 0 0 / 0.9);
+
+  --popover: #ffffff;
+  --popover-foreground: rgb(0 0 0 / 0.9);
+
+  --primary: #0a66c2;
+  --primary-foreground: #ffffff;
+
+  --secondary: #ebebeb;
+  --secondary-foreground: rgb(0 0 0 / 0.9);
+
+  --muted: #ebebeb;
+  --muted-foreground: rgb(0 0 0 / 0.6);
+
+  --accent: #e8f0fe;
+  --accent-foreground: #004182;
+
+  --destructive: #cc1016;
+  --destructive-foreground: #ffffff;
+
+  --border: #dfdfdf;
+  --input: #8c8c8c;
+  --ring: #0a66c2;
+
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-pill: 62.4375rem;
+
+  --shadow-sm: 0 0 0 1px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 0 0 1px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 0 0 1px rgb(0 0 0 / 0.08), 0 12px 28px rgb(0 0 0 / 0.16);
+}
+
+@theme {
+  --font-sans: var(--font-source-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, Menlo, monospace;
+
+  /* limpa a escala padrão do Tailwind antes de impor a do LinkedIn */
+  --text-*: initial;
+
+  --text-2xs: 0.6875rem;        /* 11px — timestamps, "há 3 dias" */
+  --text-2xs--line-height: 1rem;
+  --text-xs: 0.75rem;           /* 12px — legendas, contadores */
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;          /* 14px — corpo padrão */
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;            /* 16px */
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;          /* 18px — título de card */
+  --text-lg--line-height: 1.5rem;
+  --text-xl: 1.25rem;           /* 20px — título de seção */
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;           /* 24px — título de página */
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 2rem;             /* 32px — hero */
+  --text-3xl--line-height: 2.5rem;
+
+  --tracking-tight: -0.01em;
+  --tracking-wide: 0.02em;
+}
+
+@theme {
+  --shadow-sm: 0 0 0 1px rgb(255 255 255 / 0.08), 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 0 0 1px rgb(255 255 255 / 0.08), 0 4px 12px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 0 0 1px rgb(255 255 255 / 0.08), 0 12px 28px rgb(0 0 0 / 0.6);
+}
+
+body {
+  background: var(--bg);
+  color: rgb(var(--text) / 0.9);
+}
