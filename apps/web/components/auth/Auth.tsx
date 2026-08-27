@@ -12,9 +12,9 @@ export default function Auth() {
     }
 
     return (
-        <div className="flex flex-col gap-4 items-center border rounded-2xl border-secondary self-center py-20 px-20 shadow-md">
-          <h1 className="font-sans text-2xl">Entrar com Linkedin</h1>
-          <p className="font-sans text-sm">Entre com sua conta do Linkedin para pode buscar por vagas.</p>
+        <div className="flex flex-col gap-4 items-center border rounded-2xl border-secondary self-center py-20 px-20 shadow-md bg-card">
+          <h1 className="font-sans font-bold md:text-2xl">Entrar com Linkedin</h1>
+          <p className="font-sans text-sm hidden sm:block">Entre com sua conta do Linkedin para pode buscar por vagas.</p>
           <MyButton theme="primary" className="mt-6 font-mono tracking-widest text-xl" onClick={OAuthLinkedin}><HomeIcon size={16}/> LINKEDIN</MyButton>
         </div>
     );
