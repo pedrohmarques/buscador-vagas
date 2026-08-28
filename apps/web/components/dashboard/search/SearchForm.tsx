@@ -2,33 +2,35 @@
 import MyButton from "@/components/ui/MyButton";
 import Select from "@/components/ui/Select";
 import { JOBTYPE, PERIOD } from "@/constants/filter";
+import { parseJobs } from "@/src/lib/format";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Flex, TextField, Tooltip } from "@radix-ui/themes";
 import { Info, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 
-type createUserFormData = {
-    jobs: string;
-    periodPublication: string;
-    includeTypeJobs: string;
-    excludeTypeJobs: string
-}
 export default function SearchForm() {
     const jobSchema = z.object({
-        jobs: z.string().nonempty("Campo obrigatório."),
+        jobs: z.string().nonempty("Campo obrigatório.").transform(parseJobs),
         periodPublication: z.string(),
         includeTypeJobs: z.string(),
         excludeTypeJobs: z.string()
     })
+    
+    type JobFormInput  = z.input<typeof jobSchema>;
+    type JobFormOutput = z.output<typeof jobSchema>;
 
-    const { register, control, handleSubmit, watch, formState: { errors } } = useForm<createUserFormData>({
+    const { register, control, handleSubmit, watch, formState: { errors } } = useForm<JobFormInput, unknown, JobFormOutput>({
         resolver: zodResolver(jobSchema),
         defaultValues: { periodPublication: "lastWeek", includeTypeJobs: "remote", excludeTypeJobs: "on-site" }
-    })
-
-    const onSubmit = (data: createUserFormData) => {
-        console.log('Dados válidos enviados:', data);
+    })   
+    const router = useRouter();
+    const onSubmit = (data: JobFormOutput) => {
+        const params = new URLSearchParams();
+        data.jobs.forEach((j) => params.append("jobs", j));
+        params.set("period", data.periodPublication);
+        router.push(`/dashboard?${params}`);
     };
 
     return (

@@ -2,13 +2,12 @@
 
 import MyButton from "@/components/ui/MyButton";
 import { HomeIcon } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function Auth() {
-
-    async function OAuthLinkedin() {
-        sessionStorage.setItem('user', JSON.stringify({ name: 'Pedro Almeida', email: 'pedroalmeida@gmail.com'}))
-        redirect('/dashboard')
+    async function OAuthLinkedin() {  
+        await signIn("linkedin", {redirectTo: "/dashboard"})
     }
 
     return (

@@ -28,6 +28,17 @@
   --destructive: #cc1016;
   --destructive-foreground: #ffffff;
 
+  --brand: #5f6ade;
+  --brand-foreground: #ffffff;
+
+  --brand-100: #bdc2f1;
+  --brand-300: #8e96e8;
+  --brand-500: #5f6ade;
+  --brand-700: #4350d8;
+
+  --brand-gradient: linear-gradient(135deg, #0a66c2 0%, #5f6ade 50%, #7c3aed 100%);
+  --brand-gradient-soft: linear-gradient(135deg, #5f6ade 0%, #8e96e8 45%, #f4f2ee 100%);
+
   --border: #dfdfdf;
   --input: #8c8c8c;
   --ring: #0a66c2;
@@ -60,6 +71,13 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-pill: 62.4375rem;
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-100: var(--brand-100);
+  --color-brand-300: var(--brand-300);
+  --color-brand-500: var(--brand-500);
+  --color-brand-700: var(--brand-700);
 
   --shadow-sm: 0 0 0 1px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.06);
   --shadow-md: 0 0 0 1px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.12);
@@ -99,6 +117,14 @@
   --shadow-sm: 0 0 0 1px rgb(255 255 255 / 0.08), 0 1px 2px rgb(0 0 0 / 0.4);
   --shadow-md: 0 0 0 1px rgb(255 255 255 / 0.08), 0 4px 12px rgb(0 0 0 / 0.5);
   --shadow-lg: 0 0 0 1px rgb(255 255 255 / 0.08), 0 12px 28px rgb(0 0 0 / 0.6);
+}
+
+@utility bg-brand-gradient-soft {
+  background-image: var(--brand-gradient-soft);
+}
+
+@utility bg-brand-gradient {
+  background-image: var(--brand-gradient);
 }
 
 body {
