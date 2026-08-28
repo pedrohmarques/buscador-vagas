@@ -21,7 +21,7 @@ interface SelectProps {
 export default function Select({ label, name, value, onChange, onBlur, error, options, placeholder = "Selecione..."}: SelectProps) {
     return (
         <Flex direction="column" gap="2" flexGrow="1">
-            <p className="font-sans text-md font-semibold flex gap-2 items-center">
+            <p className="font-sans text-sm font-semibold flex gap-2 items-center">
                 {label}
             </p>
             <RadixSelect.Root value={value} onValueChange={onChange} name={name}>
